@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="JavaScriptCalculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/main.css">
+
+    <title>JavaScript Calculator</title>
+
+    <link rel="icon" href="images/0-zvijezda.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="text-center text-danger py-5">JavaScript Calculator</h1>
+    </header>
+
+    <main>
+        <div>
+            <div class="calculator-body mx-auto mb-5 wrapper">
+                <!-- Ovaj sam wrapper ostavio dok ne promijenim nacin funkcionisanja u JS -->
+                <div class="calculator-borders">
+                    <div class="row mx-0 bg-inverse py-3">
+                        <div class="col-12">
+                            <div class="row px-3">
+                                <div class="col-4 offset-8 px-0">
+                                    <div class="d-flex display-background">
+                                        <span class="flexed-1"></span>
+                                        <span class="flexed-1"></span>
+                                        <span class="flexed-1"></span>
+                                        <span class="flexed-1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col-12">
+                                    <div class="display-background py-3 px-3">
+                                        <!-- THE JAVASCRIPT CALCULATIONS WILL BE HERE -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-0 bg-faded pb-4">
+                        <div class="col-12">
+                            <div class="row no-gutters d-flex align-items-center text-center pt-4">
+                                <div class="flexed-1">
+                                    <button class="btn btn-danger" onclick="calculator.clearAll()">
+                                        ON/C
+                                    </button>
+                                </div>
+                                <div class="flexed-4 signatureLuka text-left">
+                                    Created by LukaGrdinic
+                                </div>
+                            </div>
+                            <div class="row no-gutters d-flex">
+                                <div class="flexed-3">
+                                    <div class="row no-gutters text-center pt-3">
+                                        <div class="flexed-1">
+                                            <button id="7" class="btn text-white valid">7</button>
+                                        </div>
+                                        <div class="flexed-1">
+                                            <button id="8" class="btn text-white valid">8</button>
+                                        </div>
+                                        <div class="flexed-1">
+                                            <button id="9" class="btn text-white valid">9</button>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters text-center pt-3">
+                                        <div class="col-4">
+                                            <button id="4" class="btn text-white valid">4</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="5" class="btn text-white valid">5</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="6" class="btn text-white valid">6</button>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters text-center pt-3">
+                                        <div class="col-4">
+                                            <button id="1" class="btn text-white valid"> 1</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="2" class="btn text-white valid">2</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="3" class="btn text-white valid">3</button>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters text-center pt-3">
+                                        <div class="col-4">
+                                            <button id="0" class="btn text-white valid">0</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="dot" class="btn text-white valid">.</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="plusOrminus" class="btn text-white">+/-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flexed-2 ">
+                                    <div class="row no-gutters text-center pt-3">
+                                        <div class="col-6">
+                                            <button class="btn bg-darkgray text-white">
+                                                %
+                                            </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn bg-darkgray text-white" onclick="calculator.clearStringNumber()">
+                                                CE
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters text-center pt-3">
+
+                                        <div class="col-6">
+                                            <button id="*" class="btn bg-darkgray text-white operator">*</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button id="/" class="btn bg-darkgray text-white operator">/</button>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters text-center pt-3">
+                                        <div class="col-6 d-flex flex-column align-items-center">
+                                            <button id="+" class="flexed-1 btn bg-darkgray text-white operator">+</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <button id="-" class="btn bg-darkgray text-white operator">-</button>
+                                                </div>
+                                                <div class="col-12 pt-3">
+                                                    <div class="text-center">
+                                                        <button class="btn bg-darkgray text-white" onclick="calculator.showFinalResult()">=</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+    <script src="src/js/calculator.js"></script>
+
+    <!-- BOOTSTRAP v4.0.0-alpha.6 cdn build-->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP v4.0.0-alpha.6 cdn endbuild-->
+
+</body>
+
+
+</html>

@@ -1,0 +1,87 @@
+// COMPILE SASS TO CSS BY TYPING IN THE TERMINAL : sass --watch main.scss:main.css 
+// ==================================================================== 
+
+/* BASE */
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+/* LAYOUTS */
+
+.calculator-body {
+    width: 500px;
+    height: 550px;
+}
+
+.calculator-body .btn {
+    width: 80px;
+    height: 50px;
+}
+
+main>div {
+    overflow-x: scroll;
+}
+
+.display-background {
+    background-color: #BAC6C0;
+}
+
+.bg-darkgray {
+    background-color: #7D807F; 
+}
+
+/* FLEX TRICKS */
+
+.flexed-1 {
+    flex:1;
+}
+.flexed-2 {
+    flex:2;
+}
+.flexed-3 {
+    flex:3;
+}
+.flexed-4 {
+    flex:4;
+}
+
+/* BORDERS & SHADOWS */
+
+.calculator-borders {
+    border: solid 3px rgb(221, 221, 221);
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px #7D807F,5px 5px 20px black;
+}
+
+.btn {
+    box-shadow: 0px 3px 3px black;
+}
+.btn:focus {
+    box-shadow: 0px 3px 3px black; 
+}
+
+/* BTN 3D EFFECT */
+
+.btn:active {
+    transition: 0s;
+    position: relative;
+    top:3px;
+    box-shadow: 0px 0px 0px black;
+}
+
+.display-background span {
+    border-left: 1px solid gray;
+    height: 25px;
+}
+
+/* FUNNY FONT */
+
+.signatureLuka {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+}
