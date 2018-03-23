@@ -1,4 +1,4 @@
-// COMPILE SASS TO CSS BY TYPING IN THE TERMINAL : sass --watch main.scss:main.css 
+// COMPILE SASS TO CSS BY TYPING IN THE TERMINAL : sass --watch src/css/main.scss:src/css/main.css 
 // ==================================================================== 
 
 /* BASE */
@@ -21,18 +21,28 @@ p {
 .calculator-body .btn {
     width: 80px;
     height: 50px;
+    font-size: 18px;
+    color:white; // DA VIDIMO OCE LI OVO RADIT
 }
 
 main>div {
     overflow-x: scroll;
 }
 
-.display-background {
+@font-face {
+    font-family: calculatorFont;
+    src: url("../../fonts/calculatorFont/digital-7.ttf");
+}
+
+.calculator-display {
+    font-family: calculatorFont;
+    font-size: 30px;
     background-color: #BAC6C0;
 }
 
-.bg-darkgray {
-    background-color: #7D807F; 
+.calculator-display span {
+    border-left: 1px solid gray;
+    height: 25px;
 }
 
 /* FLEX TRICKS */
@@ -58,11 +68,20 @@ main>div {
     box-shadow: 5px 5px 20px #7D807F,5px 5px 20px black;
 }
 
+/* BUTTONS */
+
+.keybord-number .btn {
+    background-color: rgb(221, 221, 221);
+}
+.keybord-operations .btn {
+    background-color: #7D807F; 
+}
+
 .btn {
     box-shadow: 0px 3px 3px black;
 }
 .btn:focus {
-    box-shadow: 0px 3px 3px black; 
+    box-shadow: 0px 3px 3px black;
 }
 
 /* BTN 3D EFFECT */
@@ -74,14 +93,11 @@ main>div {
     box-shadow: 0px 0px 0px black;
 }
 
-.display-background span {
-    border-left: 1px solid gray;
-    height: 25px;
-}
-
 /* FUNNY FONT */
 
 .signatureLuka {
     font-family: 'Amatic SC', cursive;
     font-size: 2rem;
 }
+
+// TREBALO BI DA NADJEM NACIN DA SVI .MAP FAJLOVI BUDU U .GITIGNORE (KAO OVAJ MAIN.CSS.MAP) ?

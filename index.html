@@ -24,14 +24,13 @@
 
     <main>
         <div>
-            <div class="calculator-body mx-auto mb-5 wrapper">
-                <!-- Ovaj sam wrapper ostavio dok ne promijenim nacin funkcionisanja u JS -->
+            <div class="calculator-body mx-auto mb-5">
                 <div class="calculator-borders">
                     <div class="row mx-0 bg-inverse py-3">
                         <div class="col-12">
                             <div class="row px-3">
                                 <div class="col-4 offset-8 px-0">
-                                    <div class="d-flex display-background">
+                                    <div class="d-flex calculator-display">
                                         <span class="flexed-1"></span>
                                         <span class="flexed-1"></span>
                                         <span class="flexed-1"></span>
@@ -41,8 +40,8 @@
                             </div>
                             <div class="row py-3">
                                 <div class="col-12">
-                                    <div class="display-background py-3 px-3">
-                                        <!-- THE JAVASCRIPT CALCULATIONS WILL BE HERE -->
+                                    <div class="calculator-display py-1 px-3">
+                                        <!-- THE JAVASCRIPT CALCULATIONS WILL BE HERE -->1234567890
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +51,7 @@
                         <div class="col-12">
                             <div class="row no-gutters d-flex align-items-center text-center pt-4">
                                 <div class="flexed-1">
-                                    <button class="btn btn-danger" onclick="calculator.clearAll()">
+                                    <button class="btn btn-danger px-0" onclick="calculator.clearAll()">
                                         ON/C
                                     </button>
                                 </div>
@@ -61,61 +60,62 @@
                                 </div>
                             </div>
                             <div class="row no-gutters d-flex">
-                                <div class="flexed-3">
+                                <div class="flexed-3 keybord-number">
                                     <div class="row no-gutters text-center pt-3">
                                         <div class="flexed-1">
-                                            <button id="7" class="btn text-white valid">7</button>
+                                            <button class="btn valid">7</button>
                                         </div>
                                         <div class="flexed-1">
-                                            <button id="8" class="btn text-white valid">8</button>
+                                            <button class="btn valid">8</button>
                                         </div>
                                         <div class="flexed-1">
-                                            <button id="9" class="btn text-white valid">9</button>
+                                            <button class="btn valid">9</button>
                                         </div>
                                     </div>
                                     <div class="row no-gutters text-center pt-3">
                                         <div class="col-4">
-                                            <button id="4" class="btn text-white valid">4</button>
+                                            <button class="btn valid">4</button>
                                         </div>
                                         <div class="col-4">
-                                            <button id="5" class="btn text-white valid">5</button>
+                                            <button class="btn valid">5</button>
                                         </div>
                                         <div class="col-4">
-                                            <button id="6" class="btn text-white valid">6</button>
-                                        </div>
-                                    </div>
-                                    <div class="row no-gutters text-center pt-3">
-                                        <div class="col-4">
-                                            <button id="1" class="btn text-white valid"> 1</button>
-                                        </div>
-                                        <div class="col-4">
-                                            <button id="2" class="btn text-white valid">2</button>
-                                        </div>
-                                        <div class="col-4">
-                                            <button id="3" class="btn text-white valid">3</button>
+                                            <button class="btn valid">6</button>
                                         </div>
                                     </div>
                                     <div class="row no-gutters text-center pt-3">
                                         <div class="col-4">
-                                            <button id="0" class="btn text-white valid">0</button>
+                                            <button class="btn valid"> 1</button>
                                         </div>
                                         <div class="col-4">
-                                            <button id="dot" class="btn text-white valid">.</button>
+                                            <button class="btn valid">2</button>
                                         </div>
                                         <div class="col-4">
-                                            <button id="plusOrminus" class="btn text-white">+/-</button>
+                                            <button class="btn valid">3</button>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters text-center pt-3">
+                                        <div class="col-8 d-flex px-1">
+                                            <!-- ODJE POSTOJI MALI PROBLEM, KOJI SE JAVLJA NA SVIM BUTTONIMA,
+                                            A TAJ PROBLEM JE TO STO SVI DUGMICI IMAJU FIXED WIDTH U OKVIRU SVOJIH KOLONA,
+                                            A TO ZNACI DA SVAKO DUGME SA SVOJE STRANE IMA PO NEKIH 6.4px PROSTORA,
+                                            I ONDA SAM ODJE POKUSAO DA POGODIM POMOCU PX-1 TAJ PADDING  -->
+                                            <button class="flexed-1 btn valid">0</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="dot" class="btn valid">.</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flexed-2 ">
+                                <div class="flexed-2 keybord-operations">
                                     <div class="row no-gutters text-center pt-3">
                                         <div class="col-6">
-                                            <button class="btn bg-darkgray text-white">
+                                            <button class="btn operator">
                                                 %
                                             </button>
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn bg-darkgray text-white" onclick="calculator.clearStringNumber()">
+                                            <button class="btn  " onclick="calculator.clearStringifiedNumber()">
                                                 CE
                                             </button>
                                         </div>
@@ -123,24 +123,24 @@
                                     <div class="row no-gutters text-center pt-3">
 
                                         <div class="col-6">
-                                            <button id="*" class="btn bg-darkgray text-white operator">*</button>
+                                            <button class="btn operator">*</button>
                                         </div>
                                         <div class="col-6">
-                                            <button id="/" class="btn bg-darkgray text-white operator">/</button>
+                                            <button class="btn operator">/</button>
                                         </div>
                                     </div>
                                     <div class="row no-gutters text-center pt-3">
                                         <div class="col-6 d-flex flex-column align-items-center">
-                                            <button id="+" class="flexed-1 btn bg-darkgray text-white operator">+</button>
+                                            <button class="flexed-1 btn operator">+</button>
                                         </div>
                                         <div class="col-6">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <button id="-" class="btn bg-darkgray text-white operator">-</button>
+                                                    <button class="btn operator">-</button>
                                                 </div>
                                                 <div class="col-12 pt-3">
                                                     <div class="text-center">
-                                                        <button class="btn bg-darkgray text-white" onclick="calculator.showFinalResult()">=</button>
+                                                        <button class="btn" onclick="calculator.showFinalResult()">=</button>
                                                     </div>
                                                 </div>
                                             </div>

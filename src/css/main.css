@@ -12,16 +12,24 @@ p {
 
 .calculator-body .btn {
   width: 80px;
-  height: 50px; }
+  height: 50px;
+  font-size: 18px;
+  color: white; }
 
 main > div {
   overflow-x: scroll; }
 
-.display-background {
+@font-face {
+  font-family: calculatorFont;
+  src: url("../../fonts/calculatorFont/digital-7.ttf"); }
+.calculator-display {
+  font-family: calculatorFont;
+  font-size: 30px;
   background-color: #BAC6C0; }
 
-.bg-darkgray {
-  background-color: #7D807F; }
+.calculator-display span {
+  border-left: 1px solid gray;
+  height: 25px; }
 
 /* FLEX TRICKS */
 .flexed-1 {
@@ -42,6 +50,13 @@ main > div {
   border-radius: 5px;
   box-shadow: 5px 5px 20px #7D807F,5px 5px 20px black; }
 
+/* BUTTONS */
+.keybord-number .btn {
+  background-color: #dddddd; }
+
+.keybord-operations .btn {
+  background-color: #7D807F; }
+
 .btn {
   box-shadow: 0px 3px 3px black; }
 
@@ -54,10 +69,6 @@ main > div {
   position: relative;
   top: 3px;
   box-shadow: 0px 0px 0px black; }
-
-.display-background span {
-  border-left: 1px solid gray;
-  height: 25px; }
 
 /* FUNNY FONT */
 .signatureLuka {

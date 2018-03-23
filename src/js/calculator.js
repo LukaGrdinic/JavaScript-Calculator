@@ -11,7 +11,7 @@ let calculator = {
         let parsedNumber = parseFloat(this.stringifiedNumber); // ODJE CE MOZDA TREBATI parseFloat
         return parsedNumber;
     },
-    clearstringifiedNumber: function () {
+    clearStringifiedNumber: function () {
         this.stringifiedNumber = "";
     },
     clearAll: function () {
@@ -30,6 +30,7 @@ let calculator = {
                 case 'subtract': return a - b; break;
                 case 'multiply': return a * b; break;
                 case 'divide': return a / b; break;
+                case 'findPercent': return a / 100 * b; break;
             }
         });
 
@@ -49,8 +50,8 @@ let calculator = {
 
 let handlers = {
     setUpEventListeners: function () {
-        let wrapper = document.querySelector('.wrapper');
-        wrapper.addEventListener('click', function (e) {
+        let calculatorBody = document.querySelector('.calculator-body');
+        calculatorBody.addEventListener('click', function (e) {            // MOZDA OVO TREBA DA ZAMIJENIM TAKO STO CU SAMO U HTML DA STAVIM ONCLICK NA SVAKO DUGME
             if (e.target.classList.length === 0) {
                 console.log('Ain\'t nottin\' gonna happen');
             } else {
@@ -74,6 +75,7 @@ let handlers = {
             case '-': calculator.currentOperator = 'subtract'; break;
             case '*': calculator.currentOperator = 'multiply'; break;
             case '/': calculator.currentOperator = 'divide'; break;
+            case '%': calculator.currentOperator = 'findPercent'; break;
         }
     },
     buttonOperator: function (operator) {        // AKO JE KLIKNUT OPERATOR
@@ -94,10 +96,14 @@ let handlers = {
 // SETTING UP THE EVENT LISTENERS
 handlers.setUpEventListeners();
 
-
-
 /* DALJI PLAN ZA DIGITRON */
 
-// NAPRAVITI INTERFEJS,PRIKAZ BROJEVA DOK SE KUCAJU
+/* TREBA DA KAD MYARRAY VEC IMA VRIJEDNOSTI, (I MYARRAY[0] I MYARRAY[1])
+A ONDA SAMO UKUCAM BROJ NOVI, NE UKUCAVAJUCI OPERATOR PRIJE BROJA,
+TREBA DA MYOPERATOR === 'add', MYARRAY[0] = 0, A DA NOVI BROJ BUDE MYARRAY[1] */
+// TREBA DA MNOZENJE, DIJELJENJE I NALAZENJE PROCENTA IMA PREDNOST U ODNOSU NA SABIRANJE I ODUZIMANJE
+// MOZDA BI TREBALO PONEKAD DA BACI GRESKU (DA OBAVIJESTI ILI U KOZNOLI ILI NA EKRANU)
+// TREBA SE POBRINUT ZA DECIMALNE BROJEVE, DA FUNKCIONISU KAKO TREBA, JER ZA SAD RADE SAMO PO DEFAULTU
 
-// DODATI DUGME KOJE NALAZI PROCENAT
+
+// NAPRAVITI INTERFEJS,PRIKAZ BROJEVA DOK SE KUCAJU
