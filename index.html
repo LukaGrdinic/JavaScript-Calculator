@@ -40,8 +40,14 @@
                             </div>
                             <div class="row py-3">
                                 <div class="col-12">
-                                    <div class="calculator-display py-1 px-3">
-                                        <!-- THE JAVASCRIPT CALCULATIONS WILL BE HERE -->1234567890
+                                    <div class="calculator-display px-3 pb-2">
+                                        <div id="currentOperator">
+                                            <!-- THE JAVASCRIPT CURRENTOPERATOR WILL BE HERE -->
+                                        </div>
+                                        <div id="result">
+                                            0
+                                            <!-- THE JAVASCRIPT CALCULATIONS WILL BE HERE -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -49,87 +55,94 @@
                     </div>
                     <div class="row mx-0 bg-faded pb-4">
                         <div class="col-12">
-                            <div class="row no-gutters d-flex align-items-center text-center pt-4">
-                                <div class="flexed-1">
-                                    <button class="btn btn-danger px-0" onclick="calculator.clearAll()">
-                                        ON/C
-                                    </button>
-                                </div>
-                                <div class="flexed-4 signatureLuka text-left">
-                                    Created by LukaGrdinic
+                            <div class="row no-gutters align-items-center text-center pt-4">
+                                <div class="col-12 d-flex">
+                                    <div class="flexed-1">
+                                        <button class="btn btn-danger px-0" onclick="calculator.clearAll()">
+                                            ON/C
+                                        </button>
+                                    </div>
+                                    <div class="flexed-3 signatureLuka text-left">
+                                        Created by LukaGrdinic
+                                    </div>
+                                    <div class="flexed-1">
+                                        <button class="btn btn-sci px-0" onclick="showScientific()">
+                                            Sci
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row no-gutters d-flex">
-                                <div class="flexed-3 keybord-number">
-                                    <div class="row no-gutters text-center pt-3">
+                                <div class="flexed-3 keybord-number text-center">
+                                    <div class="row no-gutters pt-3">
                                         <div class="flexed-1">
-                                            <button class="btn valid">7</button>
-                                        </div>
-                                        <div class="flexed-1">
-                                            <button class="btn valid">8</button>
+                                            <button class="btn validNumber">7</button>
                                         </div>
                                         <div class="flexed-1">
-                                            <button class="btn valid">9</button>
+                                            <button class="btn validNumber">8</button>
+                                        </div>
+                                        <div class="flexed-1">
+                                            <button class="btn validNumber">9</button>
                                         </div>
                                     </div>
-                                    <div class="row no-gutters text-center pt-3">
+                                    <div class="row no-gutters pt-3">
                                         <div class="col-4">
-                                            <button class="btn valid">4</button>
+                                            <button class="btn validNumber">4</button>
                                         </div>
                                         <div class="col-4">
-                                            <button class="btn valid">5</button>
+                                            <button class="btn validNumber">5</button>
                                         </div>
                                         <div class="col-4">
-                                            <button class="btn valid">6</button>
-                                        </div>
-                                    </div>
-                                    <div class="row no-gutters text-center pt-3">
-                                        <div class="col-4">
-                                            <button class="btn valid"> 1</button>
-                                        </div>
-                                        <div class="col-4">
-                                            <button class="btn valid">2</button>
-                                        </div>
-                                        <div class="col-4">
-                                            <button class="btn valid">3</button>
+                                            <button class="btn validNumber">6</button>
                                         </div>
                                     </div>
-                                    <div class="row no-gutters text-center pt-3">
+                                    <div class="row no-gutters pt-3">
+                                        <div class="col-4">
+                                            <button class="btn validNumber"> 1</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn validNumber">2</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn validNumber">3</button>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters pt-3">
                                         <div class="col-8 d-flex px-1">
                                             <!-- ODJE POSTOJI MALI PROBLEM, KOJI SE JAVLJA NA SVIM BUTTONIMA,
                                             A TAJ PROBLEM JE TO STO SVI DUGMICI IMAJU FIXED WIDTH U OKVIRU SVOJIH KOLONA,
                                             A TO ZNACI DA SVAKO DUGME SA SVOJE STRANE IMA PO NEKIH 6.4px PROSTORA,
                                             I ONDA SAM ODJE POKUSAO DA POGODIM POMOCU PX-1 TAJ PADDING  -->
-                                            <button class="flexed-1 btn valid">0</button>
+                                            <button class="flexed-1 btn validNumber">0</button>
                                         </div>
                                         <div class="col-4">
-                                            <button id="dot" class="btn valid">.</button>
+                                            <button id="dot" class="btn validNumber">.</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flexed-2 keybord-operations">
-                                    <div class="row no-gutters text-center pt-3">
+                                <div class="flexed-2 keybord-operations text-center">
+                                    <div class="row no-gutters pt-3">
                                         <div class="col-6">
                                             <button class="btn operator">
                                                 %
                                             </button>
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn  " onclick="calculator.clearStringifiedNumber()">
+                                            <button class="btn" onclick="calculator.clearStringifiedNumber()">
                                                 CE
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="row no-gutters text-center pt-3">
+                                    <div class="row no-gutters pt-3">
 
                                         <div class="col-6">
-                                            <button class="btn operator">*</button>
+                                            <button class="btn operator">x</button>
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn operator">/</button>
+                                            <button class="btn operator">÷</button>
                                         </div>
                                     </div>
-                                    <div class="row no-gutters text-center pt-3">
+                                    <div class="row no-gutters pt-3">
                                         <div class="col-6 d-flex flex-column align-items-center">
                                             <button class="flexed-1 btn operator">+</button>
                                         </div>
@@ -139,7 +152,7 @@
                                                     <button class="btn operator">-</button>
                                                 </div>
                                                 <div class="col-12 pt-3">
-                                                    <div class="text-center">
+                                                    <div>
                                                         <button class="btn" onclick="calculator.showFinalResult()">=</button>
                                                     </div>
                                                 </div>
@@ -148,11 +161,11 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </main>
 

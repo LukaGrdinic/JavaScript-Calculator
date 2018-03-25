@@ -1,7 +1,17 @@
 // COMPILE SASS TO CSS BY TYPING IN THE TERMINAL : sass --watch src/css/main.scss:src/css/main.css 
 // ==================================================================== 
 
+/* COLORS */
+
+$gray-lighter: #a7a7a7;
+$gray-darker: #3f4040;
+$gray-greenish: #BAC6C0;
+
 /* BASE */
+
+body {
+    background-color: #b8b8b8;
+}
 
 h1,h2,h3,h4,h5,h6 {
     margin: 0px;
@@ -11,7 +21,7 @@ p {
     margin: 0px;
 }
 
-/* LAYOUTS */
+/* LAYOUT */
 
 .calculator-body {
     width: 500px;
@@ -22,7 +32,8 @@ p {
     width: 80px;
     height: 50px;
     font-size: 18px;
-    color:white; // DA VIDIMO OCE LI OVO RADIT
+    color:white;
+    text-align:center;
 }
 
 main>div {
@@ -36,11 +47,19 @@ main>div {
 
 .calculator-display {
     font-family: calculatorFont;
-    font-size: 30px;
-    background-color: #BAC6C0;
+    font-size: 50px;
+    line-height: 1;
+    text-align: right;
+    background-color: $gray-greenish;
+    border: 2px solid gray;
+    border-radius: 5px;
+    div:first-child {
+        color: $gray-darker;
+        min-height: 50px;
+    }
 }
 
-.calculator-display span {
+.calculator-display span:not(:first-child) {
     border-left: 1px solid gray;
     height: 25px;
 }
@@ -63,25 +82,30 @@ main>div {
 /* BORDERS & SHADOWS */
 
 .calculator-borders {
-    border: solid 3px rgb(221, 221, 221);
+    border: solid 3px $gray-lighter;
     border-radius: 5px;
-    box-shadow: 5px 5px 20px #7D807F,5px 5px 20px black;
+    box-shadow: 5px 5px 20px $gray-darker,
+                5px 5px 20px black;
 }
 
 /* BUTTONS */
 
 .keybord-number .btn {
-    background-color: rgb(221, 221, 221);
+    background-color: $gray-lighter;
 }
 .keybord-operations .btn {
-    background-color: #7D807F; 
+    background-color: $gray-darker; 
 }
 
 .btn {
     box-shadow: 0px 3px 3px black;
 }
 .btn:focus {
-    box-shadow: 0px 3px 3px black;
+    box-shadow: 0px 3px 3px black; // For some reason, this property removes the blue outline or border when btn is focused
+}
+
+.btn-sci {
+    background-color: #82679e;
 }
 
 /* BTN 3D EFFECT */
@@ -100,4 +124,8 @@ main>div {
     font-size: 2rem;
 }
 
+// MALO SE POIGRATI SA BOX-SHADOW-om 
+// ISPROBATI KAKO DA SE DUGMAD, NAKON STO SU KLIKNUTA, VRATE NAZAD NA POLOZAJ POLAKO, ALI DA SHADOW BUDE ODMAH TU, DA NEMA SHADOW TRANSITION-a
+// ISPROBATI DA DUGMAD NEMAJU SA STRANA (X OSA) SHADOW, AL ZATO DA IMAJU NEKI MALO SVJETLIJI SHADOW, NEKI INSET ILI NESTO U SVOM DONJEM DIJELU
+// ISPROBATI NEKI TRANSITION NA DISPLAYU, DA SE BROJEVI MALO ELEGANTNIJE POJAVLJUJU
 // TREBALO BI DA NADJEM NACIN DA SVI .MAP FAJLOVI BUDU U .GITIGNORE (KAO OVAJ MAIN.CSS.MAP) ?
