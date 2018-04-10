@@ -1,5 +1,5 @@
 
-
+/* TEST FUNCTION */
 function findPercentage(a) {
     return a/100;
 }
@@ -10,4 +10,5 @@ tests({
         var result = findPercentage(testPercent);
         eq(result,1);
     }
+    
 });

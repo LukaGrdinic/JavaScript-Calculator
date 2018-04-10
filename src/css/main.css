@@ -22,7 +22,7 @@ p {
   text-align: center; }
 
 main > div {
-  overflow-x: scroll; }
+  overflow-x: auto; }
 
 @font-face {
   font-family: calculatorFont;
@@ -83,7 +83,7 @@ main > div {
   transition: 0s;
   position: relative;
   top: 3px;
-  box-shadow: 0px 0px 0px black; }
+  box-shadow: none; }
 
 /* FUNNY FONT */
 .signatureLuka {
