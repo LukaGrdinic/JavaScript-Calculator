@@ -37,16 +37,16 @@ p {
 }
 
 main>div {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 @font-face {
-    font-family: calculatorFont;
+    font-family: calculatorFont; // It is a good habit to use '' quoted font family name for imported fonts
     src: url("../../fonts/calculatorFont/digital-7.ttf");
 }
 
 .calculator-display {
-    font-family: calculatorFont;
+    font-family: calculatorFont; // It is a good habit to use '' quoted font family name for imported fonts
     font-size: 50px;
     line-height: 1;
     text-align: right;
@@ -114,7 +114,7 @@ main>div {
     transition: 0s;
     position: relative;
     top:3px;
-    box-shadow: 0px 0px 0px black;
+    box-shadow: none;
 }
 
 /* FUNNY FONT */
